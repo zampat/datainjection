@@ -182,6 +182,11 @@ function plugin_data_injection_update131_14() {
 	
 	$sql=" ALTER TABLE `glpi_plugin_data_injection_profiles` CHANGE `create_model` `model` CHAR( 1 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL";
 	$DB->query($sql);
+	
+               //When updating, check if the upload folder is already present 
+   
+    if (!is_dir(PLUGIN_DATA_INJECTION_UPLOAD_DIR)) 
+       @ mkdir(PLUGIN_DATA_INJECTION_UPLOAD_DIR) or die("Can't create folder " . PLUGIN_DATA_INJECTION_UPLOAD_DIR); 	
 }
 
 function plugin_data_injection_update14_15()
