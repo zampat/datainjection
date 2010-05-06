@@ -35,7 +35,7 @@
 
 /**
  * Add a Network Ports (for network device only)
- * 
+ *
  * @param common_fields the common_fields
  */
 function addNetworkPorts($common_fields) {
@@ -97,7 +97,7 @@ function checkVlanAlreadyAssignToPort($port_id, $vlan_id) {
  * @param result the array to log injection informations
  * @param fields the fields to use to check if plug exists or not
  * @param canadd indicates if a network plug can be created or not
- * 
+ *
  * @return nothing
  */
 function addNetPoint($result, $common_fields, $canadd) {
@@ -120,7 +120,7 @@ function addNetPoint($result, $common_fields, $canadd) {
  * @param result the array to log injection informations
  * @param fields the fields to use to check if plug exists or not
  * @param canadd indicates if a network plug can be created or not
- * 
+ *
  * @return nothing
  */
 function addNetworkingWire($result, $common_fields, $canupdate) {
@@ -158,7 +158,7 @@ function addNetworkingWire($result, $common_fields, $canupdate) {
 		if ($use_logical_number)
 			$message[] = $common_fields["netport"];
 
-		//No port found	
+		//No port found
 		if (!$res || $DB->numrows($res) < 1)
 			$result->addInjectionMessage(WARNING_NOTFOUND, implode(' ', $message));
 		else
@@ -202,7 +202,7 @@ function addNetworkingWire($result, $common_fields, $canupdate) {
  * Add a contract to an object
  * @param common_fields the fields to use
  * @type the type of object
- * 
+ *
  * @return nothing
  */
 function addContractToItem($common_fields, $type) {
@@ -261,6 +261,11 @@ function updateWithTemplate(& $fields, $type) {
 			if ($value != EMPTY_VALUE && (!isset ($fields[$key]) || $fields[$key] == EMPTY_VALUE || $fields[$key] == DROPDOWN_DEFAULT_VALUE))
 				$fields[$key] = $value;
 		}
+      $fields['name'] = autoName($fields["name"], "name", true,
+                                 $type,$fields["FK_entities"]);
+      $fields['otherserial'] = autoName($fields["otherserial"], "otherserial", true,
+                                  $type,$fields["FK_entities"]);
+
 	}
 }
 
@@ -271,7 +276,7 @@ function updateWithTemplate(& $fields, $type) {
 function connectPeripheral($result, $fields) {
 	global $DB;
 	$connect = true;
-	
+
 	if (isset ($fields["name"]) || isset ($fields["serial"]) || isset ($fields["otherserial"])) {
 
 		if (!isset ($fields["computer_id"])) {
@@ -288,7 +293,7 @@ function connectPeripheral($result, $fields) {
 					$sql .= " AND $tmpfield='" .
 					addslashes($fields[$tmpfield]) . "'";
 			}
-			
+
 			$result_sql = $DB->query($sql);
 			//If only one computer was found in the entity, perform connection
 			if ($DB->numrows($result_sql) != 1) {
