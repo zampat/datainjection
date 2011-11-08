@@ -99,8 +99,8 @@ class PluginDatainjectionWebservice {
 
       //Mandatory fields
       $additional_infos = array();
-      if (isset($params['mandatory']) && is_array($params['mandatory'])) {
-         $additional_infos = $params['mandatory'];
+      if (isset($params['additional']) && is_array($params['additional'])) {
+         $additional_infos = $params['additional'];
       }
       
       

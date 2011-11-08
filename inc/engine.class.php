@@ -103,7 +103,7 @@ class PluginDatainjectionEngine {
 
       //Optional data to be added to the fields to inject (won't be checked !)
       $optional_data = $this->addAdditionalInformations($this->infos);
-
+      
       //--------------- Set all needed options ------------------//
       //Check options
       $checks = array('ip'           => true,
@@ -195,21 +195,6 @@ class PluginDatainjectionEngine {
          }
          $return_value .= $mapping->getMappingName()."=".$value."\n";
       }
-      /*
-      else {
-         $return_value = $value;
-         //Value is not empty
-         if ($value != PluginDatainjectionCommonInjectionLib::EMPTY_VALUE) {
-            $return_value = $value;
-         }
-         else {
-            //Value is empty : use the right default value regarding the field's type
-            if (!in_array($option['displaytype'],array('text','multiline_text'))) {
-               $return_value = PluginDatainjectionCommonInjectionLib::DROPDOWN_EMPTY_VALUE;
-            }
-         }
-      }
-      */
       $fields_toinject[$mapping->getItemtype()][$mapping->getValue()] = $return_value;
    }
 
