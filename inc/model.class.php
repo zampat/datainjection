@@ -850,9 +850,12 @@ class PluginDatainjectionModel extends CommonDBTM {
          $backend->setHeaderPresent($this->specific_model->fields['is_header_present']);
          $backend->setDelimiter($this->specific_model->fields['delimiter']);
 
-         //Read n line from the CSV file
-         $injectionData = $backend->read(20);
-
+         if (!$webservice) {
+            //Read n line from the CSV file
+            $injectionData = $backend->read(20);
+         } else {
+            $injectionData = $backend->read(-1);
+         }
          //Read the whole file and store the number of lines found
          $backend->storeNumberOfLines();
          $_SESSION['datainjection']['lines']   = serialize($injectionData);
