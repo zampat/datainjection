@@ -57,7 +57,10 @@ class PluginDatainjectionSoftwareLicenseInjection extends SoftwareLicense
 
 
       $tab = Search::getOptions(get_parent_class($this));
-      $options['ignore_fields'] = PluginDatainjectionCommonInjectionLib::getBlacklistedOptions();
+      
+      $tab[8]['checktype'] = 'date';
+      
+      $options['ignore_fields'] = array(50,122);
       $options['displaytype']   = array("dropdown"       => array(5, 6, 7),
                                         "date"           => array(8),
                                         "multiline_text" => array(16));
@@ -109,7 +112,7 @@ class PluginDatainjectionSoftwareLicenseInjection extends SoftwareLicense
 
 
    function addSpecificMandatoryFields() {
-      return array('softwares_id');
+      return array('softwares_id'=>1);
    }
 
 
