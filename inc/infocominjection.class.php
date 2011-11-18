@@ -60,7 +60,10 @@ class PluginDatainjectionInfocomInjection extends Infocom
 
       $tab[4]['checktype'] = 'date';
       $tab[5]['checktype'] = 'date';
-
+      $tab[23]['checktype'] = 'date';
+      $tab[24]['checktype'] = 'date';
+      $tab[25]['checktype'] = 'date';
+      $tab[26]['checktype'] = 'date';
       //Warranty_duration
       $tab[6]['minvalue']  = 0;
       $tab[6]['maxvalue']  = 120;
@@ -121,7 +124,7 @@ class PluginDatainjectionInfocomInjection extends Infocom
       }
 
       //Add displaytype value
-      $fields_definition = array("date"             => array(4, 5),
+      $fields_definition = array("date"             => array(4, 5,23,24,25,26),
                                  "dropdown"         => array(6, 9, 19),
                                  "dropdown_integer" => array(6, 14),
                                  "decimal"          => array(8, 13, 17),
