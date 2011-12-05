@@ -103,7 +103,7 @@ function plugin_version_datainjection() {
       'minGlpiVersion' => '0.80',
       'author'         => 'Walid Nouh & Remi Collet',
       'homepage'       => 'https://forge.indepnet.net/projects/datainjection',
-      'version'        => '2.1.2'
+      'version'        => '2.1.3'
    );
 }
 
