@@ -225,6 +225,8 @@ function getTypesToInject() {
                              'PluginDatainjectionNetworkInterfaceInjection'     => 'datainjection',
                              'PluginDatainjectionDomainInjection'               => 'datainjection',
                              'PluginDatainjectionNetworkInjection'              => 'datainjection',
+                             'PluginDatainjectionDeviceCaseInjection'           => 'datainjection',
+                             'PluginDatainjectionDeviceProcessorInjection'      => 'datainjection'
                              );
    //Add pluginsq
    doHook('plugin_datainjection_populate');
