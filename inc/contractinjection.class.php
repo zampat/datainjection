@@ -67,6 +67,8 @@ class PluginDatainjectionContractInjection extends Contract
       $tab[7]['step']      = 1;
       $tab[7]['checktype'] = 'integer';
 
+      $tab[11]['checktype'] = 'float';
+
       $tab[22]['linkfield'] = 'billing';
 
       //Remove some options because some fields cannot be imported
