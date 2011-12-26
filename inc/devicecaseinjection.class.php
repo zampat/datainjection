@@ -74,7 +74,7 @@ class PluginDatainjectionDeviceCaseInjection extends DeviceCase
             $tmp['devicecases_id']            = $values[get_parent_class($this)]['id'];
             $tmp['computers_id'] = $values['Computer']['id'];
             $tmp['itemtype']     = get_parent_class($this);
-            $computer_device->add($tmp); 
+            $computer_device->add($tmp);
          }
       }
    }

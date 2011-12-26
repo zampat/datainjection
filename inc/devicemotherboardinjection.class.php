@@ -32,7 +32,7 @@ if (!defined('GLPI_ROOT')) {
    die("Sorry. You can't access directly to this file");
 }
 
-class PluginDatainjectionDeviceProcessorInjection extends DeviceProcessor
+class PluginDatainjectionDeviceMotherboardInjection extends DeviceMotherboard
                                                implements PluginDatainjectionInjectionInterface {
 
    function __construct() {
@@ -69,17 +69,12 @@ class PluginDatainjectionDeviceProcessorInjection extends DeviceProcessor
          $computer_device   = new Computer_Device(get_parent_class($this));
 
          if (!countElementsInTable($computer_device->getTable(), 
-                                   "`deviceprocessors_id`='".$values[get_parent_class($this)]['id']."' 
+                                   "`devicemotherboards_id`='".$values[get_parent_class($this)]['id']."' 
                                        AND `computers_id`='".$values['Computer']['id']."'")) {
-            $tmp['deviceprocessors_id'] = $values[get_parent_class($this)]['id'];
-            if (isset($values['DeviceProcessor']['specificity'])) {
-               $tmp['specificity'] = $values['DeviceProcessor']['specificity'];
-            } else {
-               $tmp['specificity'] = '';
-            }
-            $tmp['computers_id']        = $values['Computer']['id'];
-            $tmp['itemtype']            = get_parent_class($this);
-            $computer_device->add($tmp); 
+            $tmp['devicemotherboards_id'] = $values[get_parent_class($this)]['id'];
+            $tmp['computers_id']          = $values['Computer']['id'];
+            $tmp['itemtype']              = get_parent_class($this);
+            $computer_device->add($tmp);
          }
       }
    }
@@ -98,18 +93,6 @@ class PluginDatainjectionDeviceProcessorInjection extends DeviceProcessor
       $lib = new PluginDatainjectionCommonInjectionLib($this, $values, $options);
       $lib->processAddOrUpdate();
       return $lib->getInjectionResults();
-   }
-
-   function addSpecificNeededFields($primary_type, $values) {
-      $fields = array();
-      if (!isset($values['specif_default'])) {
-         if (isset($values['DeviceProcessor']['frequence'])) {
-            $fields['specif_default'] = $values['DeviceProcessor']['frequence']; 
-         } else {
-            $fields['specif_default'] = 0; 
-         }
-      }
-      return $fields;
    }
 
 }

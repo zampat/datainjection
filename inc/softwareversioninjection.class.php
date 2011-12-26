@@ -140,7 +140,9 @@ class PluginDatainjectionSoftwareVersionInjection extends SoftwareVersion
    }
    
    function addSpecificNeededFields($primary_type,$values) {
-      $fields['softwares_id'] = $values[$primary_type]['id'];
+      if ($primary_type != get_parent_class()) {
+         $fields['softwares_id'] = $values[$primary_type]['id'];
+      }
       return $fields;
    }
 }
