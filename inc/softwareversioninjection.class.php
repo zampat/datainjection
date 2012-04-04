@@ -114,14 +114,16 @@ class PluginDatainjectionSoftwareVersionInjection extends SoftwareVersion
 
    function getValueForAdditionalMandatoryFields($fields_toinject=array()) {
       global $DB;
- 
+      
+      print_r($fields_toinject);
+      die();
       if (!isset($fields_toinject['SoftwareVersion']['softwares_id'])) {
          return $fields_toinject;
       }
 
       $query = "SELECT `id`
                 FROM `glpi_softwares`
-                WHERE `name` = '".$fields_toinject['SoftwareLicense']['softwares_id']."'";
+                WHERE `name` = '".$fields_toinject['SoftwareVersion']['softwares_id']."'";
       $query .= getEntitiesRestrictRequest(" AND", "glpi_softwares", "entities_id", 
                                            $_SESSION['glpiactive_entity'], true);
       $result = $DB->query($query);
