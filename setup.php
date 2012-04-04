@@ -46,7 +46,7 @@ function plugin_init_datainjection() {
    if ($plugin->isInstalled("datainjection") && $plugin->isActivated("datainjection")) {
       if (!plugin_datainjection_checkDirectories()) {
          logDebug("[Datainjection plugin] ".PLUGIN_DATAINJECTION_UPLOAD_DIR.
-                     PLUGIN_DATAINJECTION_UPLOAD_DIR. " ".$LANG['datainjection']['install'][1]);
+                     " ".$LANG['datainjection']['install'][1]);
          return false;
       }
       
@@ -102,7 +102,7 @@ function plugin_version_datainjection() {
       'minGlpiVersion' => '0.80',
       'author'         => 'Walid Nouh & Remi Collet',
       'homepage'       => 'https://forge.indepnet.net/projects/datainjection',
-      'version'        => '2.1.4'
+      'version'        => '2.1.5'
    );
 }
 
