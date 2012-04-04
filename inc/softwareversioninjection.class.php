@@ -115,8 +115,6 @@ class PluginDatainjectionSoftwareVersionInjection extends SoftwareVersion
    function getValueForAdditionalMandatoryFields($fields_toinject=array()) {
       global $DB;
       
-      print_r($fields_toinject);
-      die();
       if (!isset($fields_toinject['SoftwareVersion']['softwares_id'])) {
          return $fields_toinject;
       }
