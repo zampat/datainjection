@@ -69,21 +69,19 @@ class PluginDatainjectionDeviceMemoryInjection extends DeviceMemory
          $computer_device   = new Computer_Device(get_parent_class($this));
 
          $tmp['devicememories_id'] = $values[get_parent_class($this)]['id'];
-         if (isset($values['DeviceProcessor']['specificity']) 
+         if (isset($values['DeviceProcessor']['specificity'])
             && $values['DeviceProcessor']['specificity'] > 0) {
             $tmp['specificity'] = $values['DeviceMemory']['specificity'];
          } else {
             $tmp['specificity'] = '';
          }
-         $tmp['computers_id']        = $values['Computer']['id'];
-         $tmp['itemtype']            = get_parent_class($this);
+         $tmp['computers_id'] = $values['Computer']['id'];
+         $tmp['itemtype']     = get_parent_class($this);
 
-         if (!countElementsInTable($computer_device->getTable(), 
-                                   "`devicememories_id`='".$values[get_parent_class($this)]['id']."' 
+         if (!countElementsInTable($computer_device->getTable(),
+                                   "`devicememories_id`='".$values[get_parent_class($this)]['id']."'
                                        AND `computers_id`='".$values['Computer']['id']."'")) {
-            $computer_device->add($tmp); 
-         } else {
-            $computer_device->update($tmp);
+            $computer_device->add($tmp);
          }
       }
    }
@@ -107,7 +105,7 @@ class PluginDatainjectionDeviceMemoryInjection extends DeviceMemory
    function addSpecificNeededFields($primary_type, $values) {
       $fields = array();
       if (!isset($values['DeviceMemory']['specif_default'])) {
-         $fields['specif_default'] = 0; 
+         $fields['specif_default'] = 0;
       }
       return $fields;
    }
