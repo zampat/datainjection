@@ -122,7 +122,7 @@ class PluginDatainjectionSoftwareVersionInjection extends SoftwareVersion
       $query = "SELECT `id`
                 FROM `glpi_softwares`
                 WHERE `name` = '".$fields_toinject['SoftwareVersion']['softwares_id']."'";
-      $query .= getEntitiesRestrictRequest(" AND", "glpi_softwares", "entities_id", 
+      $query .= getEntitiesRestrictRequest(" AND", "glpi_softwares", "entities_id",
                                            $_SESSION['glpiactive_entity'], true);
       $result = $DB->query($query);
 
@@ -139,7 +139,7 @@ class PluginDatainjectionSoftwareVersionInjection extends SoftwareVersion
       return $fields_toinject;
    }
    
-   function addSpecificNeededFields($primary_type,$values) {
+   function addSpecificNeededFields($primary_type, $values) {
       $fields = array();
       if ($primary_type == 'Software') {
          $fields['softwares_id'] = $values['Software']['id'];
@@ -148,13 +148,9 @@ class PluginDatainjectionSoftwareVersionInjection extends SoftwareVersion
    }
    
    function checkPresent($fields_toinject=array(), $options=array()) {
-      if (get_parent_class() != 'SoftwareVersion') {
          $where = " AND `softwares_id`='".$fields_toinject['Software']['id']."' " .
                   "AND `name`='".$fields_toinject['SoftwareVersion']['name']."'";
          return $where;
-      } else {
-         return "";
-      }
    }
 
 }
