@@ -26,6 +26,9 @@
  @link      http://www.glpi-project.org/
  @since     2009
  ---------------------------------------------------------------------- */
+Version 2.1.8 for GLPI 0.80
+ see https://forge.indepnet.net/projects/datainjection/issues?query_id=37
+
 Version 2.1.7 for GLPI 0.80
  see https://forge.indepnet.net/projects/datainjection/issues?query_id=25
 
