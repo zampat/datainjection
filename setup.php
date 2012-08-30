@@ -102,7 +102,7 @@ function plugin_version_datainjection() {
       'minGlpiVersion' => '0.80',
       'author'         => 'Walid Nouh & Remi Collet',
       'homepage'       => 'https://forge.indepnet.net/projects/datainjection',
-      'version'        => '2.1.7'
+      'version'        => '2.1.8'
    );
 }
 
@@ -181,7 +181,8 @@ function getTypesToInject() {
                              'PluginDatainjectionProfileInjection'              => 'datainjection',
                              'PluginDatainjectionProfile_UserInjection'         => 'datainjection',
                              'PluginDatainjectionSoftwareInjection'             => 'datainjection',
-                             'PluginDatainjectionSoftwareVersionInjection'      => 'datainjection',
+                             'PluginDatainjectionComputer_SoftwareVersionInjection' => 'datainjection',
+                             'PluginDatainjectionComputer_SoftwareLicenseInjection' => 'datainjection',                             'PluginDatainjectionSoftwareVersionInjection'      => 'datainjection',
                              'PluginDatainjectionSoftwareLicenseInjection'      => 'datainjection',
                              'PluginDatainjectionSupplierInjection'             => 'datainjection',
                              'PluginDatainjectionUserInjection'                 => 'datainjection',
