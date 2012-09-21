@@ -1762,6 +1762,7 @@ class PluginDatainjectionCommonInjectionLib {
                        || $this->values[$itemtype][$key] == self::EMPTY_VALUE
                        || $this->values[$itemtype][$key] == self::DROPDOWN_EMPTY_VALUE)) {
 
+                  $value = addslashes_deep($value);
                   $this->setValueForItemtype($itemtype, $key, $value);
                }
             }
