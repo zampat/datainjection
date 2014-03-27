@@ -105,7 +105,7 @@ function plugin_version_datainjection() {
                 'author'         => 'Walid Nouh, Remi Collet, Nelly Mahu-Lasson, Xavier Caillaud',
                 'homepage'       => 'https://forge.indepnet.net/projects/datainjection',
                 'license'        => 'GPLv2+',
-                'version'        => '2.3.0'
+                'version'        => '2.3.1'
    );
 }
 
