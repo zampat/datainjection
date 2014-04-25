@@ -261,11 +261,18 @@ function plugin_datainjection_migratetypes_datainjection($types) {
 function plugin_datainjection_checkDirectories() {
    $plugin = new Plugin();
 
-   if ($plugin->isInstalled('datainjection')
-       && (!file_exists(PLUGIN_DATAINJECTION_UPLOAD_DIR)
-           || !is_writable(PLUGIN_DATAINJECTION_UPLOAD_DIR))) {
-      return false;
+   if ($plugin->isInstalled('datainjection')) {
+      // if the directory "datainjection" doesn't exists, try to create it
+       if(!file_exists(PLUGIN_DATAINJECTION_UPLOAD_DIR)) {
+           if(mkdir(PLUGIN_DATAINJECTION_UPLOAD_DIR)) {
+               return true;
+            } else {
+               return false;
+            }
+       // if exists but is not writable : error
+       } elseif(!is_writable(PLUGIN_DATAINJECTION_UPLOAD_DIR)) {
+           return false;
+       }
    }
    return true;
 }
-?>
