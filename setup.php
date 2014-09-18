@@ -58,9 +58,10 @@ function plugin_init_datainjection() {
       $image_import .= __s('Injection of the file', 'datainjection');
       $image_import .= "' alt='".__s('Injection of the file', 'datainjection')."'>";
 
-      $PLUGIN_HOOKS['menu_entry']['datainjection'] = 'front/clientinjection.form.php';
+      //$PLUGIN_HOOKS['menu_entry']['datainjection'] = 'front/clientinjection.form.php';
 
       if (plugin_datainjection_haveRight("model", "r")) {
+         $PLUGIN_HOOKS['menu_entry']['datainjection'] = 'front/clientinjection.form.php';
          $PLUGIN_HOOKS['submenu_entry']['datainjection']['options']['model']['title']
                                                    = PluginDatainjectionModel::getTypeName();
          $PLUGIN_HOOKS['submenu_entry']['datainjection']['options']['model']['page']
@@ -77,9 +78,10 @@ function plugin_init_datainjection() {
          $PLUGIN_HOOKS['submenu_entry']['datainjection'][$image_model] = 'front/model.php';
          $PLUGIN_HOOKS['submenu_entry']['datainjection']['options']['model']['links'][$image_import]
                                        = '/plugins/datainjection/front/clientinjection.form.php';
+         $PLUGIN_HOOKS['submenu_entry']['datainjection']['add'] = 'front/clientinjection.form.php';
       }
 
-      $PLUGIN_HOOKS['submenu_entry']['datainjection']['add'] = 'front/clientinjection.form.php';
+      //$PLUGIN_HOOKS['submenu_entry']['datainjection']['add'] = 'front/clientinjection.form.php';
 
       $PLUGIN_HOOKS['pre_item_purge']['datainjection']
             = array('Profile' => array('PluginDatainjectionProfile', 'purgeProfiles'));
