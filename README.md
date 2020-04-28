@@ -8,6 +8,7 @@
 [![GitHub build](https://travis-ci.org/pluginsGLPI/datainjection.svg?)](https://travis-ci.org/pluginsGLPI/datainjection/)
 
 
+![Screenshot](./screenshots/datainjection.gif "Alert")
 
 
 Changes 23.06.2017:
@@ -21,14 +22,13 @@ All customizations are signed by comments
 
 // END
 New files has Copyright string added
-@copyright Copyright (C) 2017 Wuerth Phoenix, http://www.wuerth-phoenix.com
 
-./src/datainjection/inc/deviceprocessorinjection.class.php
-./src/datainjection/inc/computerdiskinjection.class.php
-./src/datainjection/inc/model.class.php
-./src/datainjection/inc/devicememoryinjection.class.php
-./src/datainjection/hook.php
-./src/datainjection/setup.php
+./inc/deviceprocessorinjection.class.php
+./inc/computerdiskinjection.class.php
+./inc/model.class.php
+./inc/devicememoryinjection.class.php
+./hook.php
+./setup.php
 
 Starting version:
 git remote add glpi_plugin_datainjection_orig https://github.com/pluginsGLPI/datainjection.git
