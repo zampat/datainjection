@@ -237,6 +237,10 @@ function getTypesToInject() {
                         'PluginDatainjectionDeviceHardDriveInjection'             => 'datainjection',
                         'PluginDatainjectionDeviceMotherboardInjection'           => 'datainjection',
                         'PluginDatainjectionDeviceDriveInjection'                 => 'datainjection',
+			// WP computer disk plugin added
+                        // START
+                        'PluginDatainjectionComputerDiskInjection'                => 'datainjection',
+                        // END
                         'PluginDatainjectionDeviceNetworkCardInjection'           => 'datainjection'
    ];
    //Add plugins
