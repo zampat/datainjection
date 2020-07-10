@@ -239,7 +239,8 @@ function getTypesToInject() {
                         'PluginDatainjectionDeviceDriveInjection'                 => 'datainjection',
 			// WP computer disk plugin added
                         // START
-                        'PluginDatainjectionComputerDiskInjection'                => 'datainjection',
+                        // MOMI GLPI 9.4 'PluginDatainjectionComputerDiskInjection'                => 'datainjection',
+                        'PluginDatainjectionItem_DiskInjection'                   => 'datainjection',
                         // END
                         'PluginDatainjectionDeviceNetworkCardInjection'           => 'datainjection'
    ];

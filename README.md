@@ -8,8 +8,11 @@
 [![GitHub build](https://travis-ci.org/pluginsGLPI/datainjection.svg?)](https://travis-ci.org/pluginsGLPI/datainjection/)
 
 
-![Screenshot](./screenshots/datainjection.gif "Alert")
-
+Changes 09.07.2020 MOMI
+item_diskinjection.class.php added, replaces computerdiskinjection.class.php for GLPI 9.4
+Attention: if Appliance plugin installed, it needs a change in 
+usr/share/glpi/plugins/appliances/inc/applianceinjection.class.php
+CHANGE #43: add param:   static function getTable($classname = NULL) {
 
 Changes 23.06.2017:
 Enhanced memory and processor import
